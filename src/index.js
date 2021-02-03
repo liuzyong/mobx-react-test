@@ -1,29 +1,52 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { types } from "mobx-state-tree";
+import { types, getSnapshot } from "mobx-state-tree";
 
-import './index.css';
+
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const Todo = types.model({
-  name: types.optional(types.string, ""),
-  done: types.optional(types.boolean, false)
-})
 
-const User = types.model({
-  name: types.optional(types.string, ""),
-})
+// const Todo = types.model({
+//   name: types.optional(types.string, ""),
+//   done: types.optional(types.boolean, false)
+// })
+// .actions(self =>{
+//   function setName(newName){
+//     self.name = newName
+//   }
+//   function toggle(){
+//     self.done = !self.done
+//   }
 
-const RootStore = types.model({
-  users: types.map(User),
-  todos: types.optional(types.map(Todo),{})
+//   return {setName, toggle}
+// })
 
-})
+// const User = types.model({
+//   name: types.optional(types.string, ""),
+// })
 
-const store = RootStore.create({
-  // users:{}
-})
+// const RootStore = types.model({
+//   users: types.map(User),
+//   todos: types.optional(types.map(Todo),{})
+// })
+// .actions(self =>{
+//   function addTodo(id, name){
+//     self.todos.set(id,Todo.create({name: name}))
+//   }
+
+//   return {addTodo}
+// })
+
+// const store = RootStore.create({
+//   users:{}
+// })
+
+// const eat = Todo.create({ name: "eat", done: 1 })
+
+// store.addTodo(0, "Eat a cake")
+// store.todos.get(0).toggle()
+
+// console.log(getSnapshot(store))
 
 // const john = User.create({name:"ant"})
 // const eat = Todo.create()
@@ -40,4 +63,4 @@ ReactDOM.render(
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();
