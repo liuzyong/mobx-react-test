@@ -2,7 +2,7 @@ import {action, configure, observable} from 'mobx'
 
 configure({enforceActions: true})
 
-class appStore{
+class AppStore{
 
     @observable counter
 
@@ -14,4 +14,4 @@ class appStore{
         this.counter++
     }
 }
-export default new appStore()
+export default new AppStore()

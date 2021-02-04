@@ -1,14 +1,15 @@
+import React from 'react'
+import {observer, inject} from 'mobx-react'
 
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-    
-      <p>Hello react-mobx</p>
-      </header>
-    </div>
-  );
+@inject('appStore') @observer
+export default class App extends React.Component{
+  render(){
+    const {add ,counter} = this.props.appStore
+    return(
+      <div>
+        <button onClick={add}></button>
+        <button > {counter}</button>
+      </div>
+    )
+  }
 }
-
-export default App;
