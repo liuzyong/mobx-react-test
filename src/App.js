@@ -1,15 +1,17 @@
 import React from 'react'
-import {observer, inject} from 'mobx-react'
+import { Provider } from 'mobx-react'
 
-@inject('appStore') @observer
-export default class App extends React.Component{
-  render(){
-    const {add ,counter} = this.props.appStore
-    return(
-      <div>
-        <button onClick={add}></button>
-        <button > {counter}</button>
-      </div>
+import AppStore from './stores/appStore'
+import DoList from './container/DoList'
+const stores = { AppStore }
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider {...stores}>
+        <DoList/>
+      </Provider>
     )
+
   }
 }

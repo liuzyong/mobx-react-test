@@ -1,6 +1,4 @@
-import {action, configure, observable} from 'mobx'
-
-configure({enforceActions: true})
+import {action, observable} from 'mobx'
 
 class AppStore{
 
