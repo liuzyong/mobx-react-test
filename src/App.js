@@ -7,6 +7,7 @@ const stores = { AppStore }
 
 export default class App extends React.Component {
   render() {
+    console.log(stores)
     return (
       <Provider {...stores}>
         <DoList/>
